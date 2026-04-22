@@ -5,7 +5,7 @@
 //______________________________________TB:CPU_____________________________________________________________________//
 //_________________________________________________________________________________________________________________//
 `define WIDTH 16
-`define DEPTH 24
+`define DEPTH 1024
 `define ADDR_WIDTH $clog2(`DEPTH)
 module memory(clk,rst,valid,ready,wdata,rdata,wr_rd,addr);
 input clk,rst,valid,wr_rd;

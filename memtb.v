@@ -10,7 +10,7 @@ module tb;
 	always #5 clk=!clk;
 	memory dut(clk,rst,valid,ready,wdata,rdata,wr_rd,addr);
 
-	initial begin
+/*	initial begin
 	clk=1;
 	rst=1;
 	valid=0;
@@ -47,5 +47,58 @@ module tb;
 	end
 	initial begin
 		#1000 $finish;
-	end	
+	end	*/
+	
+task reset(); begin
+clk=1;
+rst=1;
+valid=0;
+wr_rd=0;
+wdata=0;
+addr=0;
+repeat(2)@(posedge clk);
+rst=0;
+end
+endtask
+	
+task write(input integer start_addr,input integer loc_addr);
+begin
+	for(i=start_addr;i<start_addr+loc_addr;i=i+1)begin
+		@(posedge clk);
+		wr_rd=1;
+		wdata=$urandom_range(100,200);
+		addr=i;
+		valid=1;
+		wait(ready==1);
+	end
+		@(posedge clk);
+		valid=0;
+		addr=0;
+		wdata=0;
+
+end
+endtask
+
+task read(input integer start_addr,input integer loc_addr);
+begin
+	for(i=start_addr;i<start_addr+loc_addr;i=i+1)begin
+		@(posedge clk);
+		wr_rd=0;
+		addr=i;
+		valid=1;
+		wait(ready==1);
+	end
+		@(posedge clk);
+		valid=0;
+		addr=0;
+		wdata=0;
+end
+endtask
+
+initial begin
+reset();
+write(10,56);
+read(10,56);
+#2000 $finish();
+end
 endmodule
