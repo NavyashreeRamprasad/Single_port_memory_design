@@ -1,0 +1,55 @@
+m255
+K4
+z2
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/prate/Documents/verilog_new/mem
+vmemory
+Z1 !s110 1776922873
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 5RRM97mIiE;j9nQK=75zf2
+I8lFAGL?k2bgCXOM9`5Dz?1
+R0
+w1776917639
+8memory.v
+Fmemory.v
+!i122 15
+L0 8 58
+Z3 OL;L;2021.1;73
+31
+Z4 !s108 1776922873.000000
+Z5 !s107 memory.v|mem_tb.v|
+Z6 !s90 -reportprogress|300|mem_tb.v|
+!i113 0
+Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+vtb
+R1
+R2
+r1
+!s85 0
+!i10b 1
+!s100 GAQGMUnER7<E26z5Q>Pgc3
+I<bJ8k2zP0^9Jh20l5DLUU3
+R0
+w1776922822
+8mem_tb.v
+Fmem_tb.v
+!i122 15
+L0 2 126
+R3
+31
+R4
+R5
+R6
+!i113 0
+R7
+R8

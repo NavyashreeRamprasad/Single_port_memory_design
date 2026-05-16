@@ -66,7 +66,7 @@ begin
 	for(i=start_addr;i<start_addr+loc_addr;i=i+1)begin
 		@(posedge clk);
 		wr_rd=1;
-		wdata=$urandom_range(100,200);
+		wdata=$urandom_range(55,65);
 		addr=i;
 		valid=1;
 		wait(ready==1);
@@ -94,11 +94,42 @@ begin
 		wdata=0;
 end
 endtask
+/*task write(input integer address);
+begin
+		@(posedge clk);
+		wr_rd=1;
+		wdata=$urandom_range(100,200);
+		addr=address;
+		valid=1;
+		wait(ready==1);
+		@(posedge clk);
+		valid=0;
+		addr=0;
+		wdata=0;
+
+end
+endtask
+
+task read(input integer address);
+begin
+		@(posedge clk);
+		wr_rd=0;
+		addr=address;
+		valid=1;
+		wait(ready==1);
+		@(posedge clk);
+		valid=0;
+		addr=0;
+		wdata=0;
+end
+endtask*/
 
 initial begin
 reset();
-write(10,56);
-read(10,56);
+//write(15);
+//read(15);
+write(15,11);
+read(15,11);
 #2000 $finish();
 end
 endmodule
